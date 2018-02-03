@@ -18,14 +18,17 @@ PI = np.pi /4
 #          256.3985, 191.6309, 167.29, 102.2224, 72.5156, 81.111, 75.1628]
 # y2 = [974.599, 821.366, 764.943, 641.748, 495.29, 410.5, 360.867, 298.657, 299.973, 266.281, 285.586, 274.34, 240.159,
 #          196.3985, 191.6309, 187.29, 183.2224, 179.5156,176.111, 173.1628]
-y = np.sin(x * PI) + 3
-y3, y4 = [], []
+y = np.sin(x * PI)+3
+y3, y4, y5= [], [], []
 for i in range(20):
     y3.append(3)
     if 0 == x[i]%2:
         y4.append(y[i] + random.random())
+        y5.append(y[-i] - random.random())
     elif 0 != x[i]%2:
         y4.append(y[i] - random.random())
+        y5.append(y[-i] + random.random())
+
 # y3, y1, y4, y5 = [], [], [],[]
 # for i in range(20):
 #     if i<10:
@@ -40,14 +43,22 @@ for i in range(20):
 #         y5.append(y2[i] + random.random() * y2[i] - 20)
 
 
-plt.plot(x, y,'r-', label = 'overfitting')
-plt.plot(x, y3,'b-', label = 'fitting')
-plt.scatter(x, y4)
+plt.plot(x, y,'k-', label = 'overfitting')
+plt.plot(x, y3,'k--', label = 'fitting')
+plt.scatter(x, y4, color='black')
+plt.scatter(x, y5, color='black')
+
 # plt.plot(x, y2,'g-', label = '100')
 # plt.plot(x, y3,'k-', label = '50')
 # plt.plot(x, y4,'b-', label = '200')
 # plt.plot(x, y5,'y-', label = '150')
+ax = plt.gca()
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+
 plt.legend(loc = 'best')
-plt.ylim(0, 7)
+plt.ylim((0,8))
+plt.xlabel('x')
+plt.ylabel('y')
 plt.show()
 

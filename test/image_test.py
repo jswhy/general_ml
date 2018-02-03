@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import numpy as np
+# a = np.array([12,3,1,2,]).reshape(2,2)
+# plt.imshow(a,interpolation='nearest', cmap='bone',origin='upper')
+# plt.colorbar(shrink=0.7)
+# plt.show()
+plt.figure()
+plt.subplot(2,1,1)
+plt.plot([1,2],[2,4],'k-')
+plt.subplot(2,3,4)
+plt.plot([1,2],[2,4],'k-')
+plt.subplot(2,3,5)
+plt.plot([1,2],[2,4],'k-')
+plt.subplot(2,3,6)
+plt.plot([1,2],[2,4],'k-')
+plt.show()
