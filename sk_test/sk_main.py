@@ -1,2 +1,4 @@
-from sklearn import datasets
-import numpy as np
+a = 'aaa'
+b = 'b'
+aa, bb = [], []
+for i in range(len(a)-len(b)):String
